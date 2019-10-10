@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    title Jade
+    script(type='text/javascript').
+      async function f() {
+        
+      let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("hi i am zebra..sorry for the delay"), 2000)
+      });
+      let result = await promise;
+      document.getElementById('temp').innerHTML=result;
+      }
+      f();
+  body
+    h1 hi i am tiger
+    h1 hi i am lion
+    h1#temp

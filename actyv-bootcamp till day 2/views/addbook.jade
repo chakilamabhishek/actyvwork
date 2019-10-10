@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    script.
+        function getdata(){
+            fo=document.getElementById("myform");
+            var bookid=document.getElementById("bookid").value;
+            var bookname=document.getElementById("bookname").value;
+            var authorname=document.getElementById("authorname").value;
+            
+            fo.action="/books/add/"+bookid+"/"+bookname+"/"+authorname;
+            fo.submit();
+
+        } 
+    form#myform(method='post')
+        | BOOK ID:
+        br
+        input#bookid(type='number', name='bookid')
+        br
+        |  Bookname:
+        br
+        input#bookname(type='text', name='bookname')
+        br
+        |  author name:
+        br
+        input#authorname(type='text', name='authorname')
+        br
+        br
+        input(type='submit', value='Submit')
