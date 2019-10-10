@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    style.
+      /*add full-width input fields*/
+      input[type=text],
+      input[type=date],
+      input[type=email],
+      input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+      }
+      /* set a style for all buttons*/
+      button {
+      background-color: Green;
+      color: white;
+      padding: 15px 20px;
+      margin: 8px 0;
+      cursor: pointer;
+      width: 100%;
+      }
+      /*add padding to container elements*/
+      .container {
+      padding: 16px;
+      }
+      /*clear floats*/
+      .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+      }
+      /*styles for cancel button and signup button
+      on extra small screens*/
+      @media screen and (max-width: 300px) {
+      .cancelbtn,
+      .signupbtn {
+      width: 100%;
+      }
+      }
+  body
+    h2 Signup Form
+    // Step 1:Adding HTML
+    form(method="POST",style='border:1px solid #ccc;',action="/users/create/")
+      .container
+        label
+          b Firstname
+        input(type='text', placeholder='Enter Firstname', name='firstname', required='')
+        label
+          b Lastname
+        input(type='text', placeholder='Enter Lastname', name='lastname', required='')
+        label
+          b Date of Birth
+        input(type='date', placeholder='Enter dath of birth', name='date', required='')
+        br
+        label
+          b Email
+        input(type='email', placeholder='Enter email', name='email', required='')
+        br
+        label
+          b Adress
+        input(type='text', placeholder='Enter Adress', name='adress', required='')
+        label
+          b Password
+        input(type='password', placeholder='Enter Password', name='psw', required='')
+        .clearfix
+          button.signupbtn(type='submit') Sign Up
